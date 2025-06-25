@@ -1,0 +1,108 @@
+ Step 1: Obtain a Phishing Email Sample
+
+Sample Email (Text):
+
+```
+From: Apple Support <support@apple-security.com>
+To: user@example.com
+Subject: Urgent: Your Apple ID Has Been Locked!
+
+Dear Customer,
+
+We have detected suspicious activity in your Apple account. For your protection, your Apple ID has been temporarily locked. Please verify your account information immediately to restore access.
+
+Click the link below to verify your identity:
+https://apple-secure-login.com/verify
+
+If you do not verify within 24 hours, your account will be permanently suspended.
+
+Thank you,
+Apple Security Team
+
+Attachments: Apple-ID-Verification-Form.pdf
+```
+
+---
+
+ Step 2: Examine the Sender’s Email Address
+
+* Email Shown: `support@apple-security.com`
+*  It appears official but...
+*  It’s not from Apple! The correct domain should be `@apple.com`.
+*  This is email spoofing — attackers use a look-alike domain to deceive recipients.
+
+---
+
+ Step 3: Analyze the Email Header (Using Free Online Header Analyzer)
+
+Tool Used: [MxToolbox Email Header Analyzer](https://mxtoolbox.com/EmailHeaders.aspx)
+
+* SPF Result: Fail (email not authorized by apple.com)
+* DKIM Result: Not signed
+* IP Reputation: Low reputation / blacklisted
+* ➤ Shows clear signs of spoofing and potential spam.
+
+---
+
+ Step 4: Identify Suspicious Links or Attachments
+
+* Link Given: `https://apple-secure-login.com/verify`
+* Hovering shows that it doesn’t go to Apple’s official site.
+* The domain is fake and likely a phishing site.
+* Attachment: `Apple-ID-Verification-Form.pdf`
+
+  * ➤ Could contain malicious scripts or ask for login credentials.
+
+---
+
+ Step 5: Look for Urgent or Threatening Language
+
+* Phrases like:
+
+  * “Your account will be permanently suspended”
+  * “Urgent: Your Apple ID Has Been Locked!”
+* ➤ Creates panic to trick users into acting quickly.
+
+---
+
+ Step 6: Check for Mismatched URLs
+
+* Text says: Click here to verify
+* Actual URL: `https://apple-secure-login.com`
+* Mismatch = phishing red flag
+
+---
+
+ Step 7: Verify Spelling and Grammar
+
+* Phrase: “verify your identity” – vague, no personalization
+* “Thank you, Apple Security Team” – doesn’t match Apple’s usual formatting
+* ➤ Slight but noticeable grammatical issues
+
+---
+
+ Step 8: Summarize Phishing Traits Found
+
+| Category       | Finding                                         |
+| -------------- | ----------------------------------------------- |
+| Sender Email   | Spoofed – not a valid Apple domain              |
+| Header Check   | SPF fail, suspicious IP, unauthenticated source |
+| Links          | Mismatched, points to phishing site             |
+| Attachments    | Potential malware or credential-stealing PDF    |
+| Language Style | Threatening and urgent tone                     |
+| Grammar        | Minor spelling/formatting errors                |
+
+---
+
+##  Conclusion / Outcome
+
+This analysis helps you recognize:
+
+* Spoofed email addresses
+* Forged headers
+* Phishing links
+* Urgent tone and threats
+* Fake attachments
+* Social engineering tactics
+
+
